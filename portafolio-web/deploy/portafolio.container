@@ -1,0 +1,17 @@
+# Quadlet: va en /home/demos/.config/containers/systemd/portafolio.container
+[Unit]
+Description=Portafolio (nginx con el sitio estático)
+
+[Container]
+ContainerName=portafolio
+Image=localhost/portafolio:latest
+# Solo en la máquina: cloudflared lo publica. Nada abierto en el firewall.
+PublishPort=127.0.0.1:8092:8080
+# Estado del servidor que escribe generar-estado.py (solo lectura para el contenedor)
+Volume=%h/estado:/usr/share/nginx/html/estado:ro,z
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=default.target

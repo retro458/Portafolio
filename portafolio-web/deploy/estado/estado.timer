@@ -1,0 +1,10 @@
+# Va en /home/demos/.config/systemd/user/estado.timer
+[Unit]
+Description=Actualiza el estado del servidor cada 2 minutos
+
+[Timer]
+OnBootSec=1min
+OnUnitActiveSec=2min
+
+[Install]
+WantedBy=timers.target

@@ -1,0 +1,7 @@
+# Va en /home/demos/.config/systemd/user/estado.service
+[Unit]
+Description=Genera el estado del servidor para el portafolio
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 %h/portafolio/deploy/estado/generar-estado.py

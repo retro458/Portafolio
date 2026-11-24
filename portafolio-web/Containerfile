@@ -1,0 +1,13 @@
+# Etapa 1: compila el sitio con Vite
+FROM docker.io/library/node:22-alpine AS compilacion
+WORKDIR /app
+COPY package.json package-lock.json ./
+RUN npm ci --no-audit --no-fund
+COPY . .
+RUN npm run build
+
+# Etapa 2: solo los archivos estáticos, servidos por nginx sin root (puerto 8080)
+FROM docker.io/nginxinc/nginx-unprivileged:1.27-alpine
+COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
+COPY --from=compilacion /app/dist /usr/share/nginx/html
+EXPOSE 8080
