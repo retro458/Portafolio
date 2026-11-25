@@ -62,9 +62,9 @@ export const empleos: Empleo[] = [
 ]
 
 export const enlaces: Enlace[] = [
-  { nombre: 'GitHub', url: 'https://github.com/retro458', icono: '/iconos/github.svg', externo: true },
-  { nombre: 'LinkedIn', url: 'https://www.linkedin.com/in/erick-baudriz-bb9977253', icono: '/iconos/linkedin.svg', externo: true },
-  { nombre: 'Correo', url: '#contacto', icono: '/iconos/correo.svg' },
+  { nombre: 'GitHub', url: 'https://github.com/retro458', icono: '/iconos/github.png', externo: true },
+  { nombre: 'LinkedIn', url: 'https://www.linkedin.com/in/erick-baudriz-bb9977253', icono: '/iconos/linkedin.png', externo: true },
+  { nombre: 'Correo', url: '#contacto', icono: '/iconos/correo.png' },
   { nombre: 'Descargar CV', url: '/Erick_Baudriz_CV.pdf', icono: '/iconos/cv.svg' },
   { nombre: 'Homelab', url: '#homelab', icono: '/iconos/terminal.svg' },
 ]
